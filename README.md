@@ -27,7 +27,15 @@ docker run --rm -it --platform=linux/386 -v red-console:/root/.red -v "${PWD}":/
 
 For daily usage i'm using with alias as below:
 ```bash
-alias red='docker run --rm -it --platform=linux/386 -v red-console:/root/.red hasansemih/red'
 alias red-with-folder='docker run --rm -it --platform=linux/386 -v red-console:/root/.red -v "${PWD}":/var/app hasansemih/red'
+
+# alias red='docker run --rm -it --platform=linux/386 -v red-console:/root/.red hasansemih/red'
+red() {
+    docker run --rm -it --platform=linux/386 \
+        -v red-console:/root/.red \
+        -v "$HOME/Projects/custom-red-language-scripts":/var/scripts \
+        -e CLIP="$(pbpaste)" \
+        hasansemih/red
+}
 
 ```
