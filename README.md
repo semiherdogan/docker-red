@@ -1,7 +1,7 @@
 # docker-red
 Docker repository for running red language REPL.
 
-> Main purpose of this repository is red language runs on x32 and macos doesn't support it.
+> Main purpose of this repository is running red language on macos.
 
 --- 
 
